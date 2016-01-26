@@ -7,4 +7,12 @@ class Home extends CI_Controller {
   {
     $this->load->view('home_view');
   }
+
+  // public function test ()
+  // {
+  //   //show everything from guest table
+  //   $q=$this->db->get('guest');
+  //   print_r($q->result());
+    
+  // }
 }
