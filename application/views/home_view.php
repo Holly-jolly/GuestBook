@@ -1,6 +1,3 @@
-<?php
-  $this->load->helper('url');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,25 +5,35 @@
   <link ref="stylesheet" type="text/css" href="<?php echo base_url('/public/stylesheets/bootstrap.min.css');?>"/>
   <link ref="stylesheet" type="text/css" href="<?php echo base_url('/public/stylesheets/bootstrap-responsive.min.css');?>"/>
   <link ref="stylesheet" type="text/css" href="<?php echo base_url('/public/stylesheets/style.css');?>"/>
-  <script src="/guestbook/public/javascript/jquery-1.12.0.min.js"></script>
-  <script src="/guestbook/public/javascript/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="<?php echo base_url();?>public/javascript/bootstrap.min.js"></script>
+  <script type="text/javascript" src="<?php echo base_url();?>public/javascript/api/result.js"></script>
+  <script type="text/javascript" src="<?php echo base_url();?>public/javascript/api/event.js"></script>
+  <script type="text/javascript" src="<?php echo base_url();?>public/javascript/api/template.js"></script>
+  <script type="text/javascript" src="<?php echo base_url();?>public/javascript/api/guestboard.js"></script>
+  <script> 
+  //Initiate the Guestboard Application
+  $(function(){
+    var guestboard = new Guestboard();
+  });
+  </script>
 </head>
 <body>
   <h1> Guestbook </h1>
     <div>Company Name: H for Hope Independent Consultant </div>
       <div> Add a new guest: </div>
-      <form class="form-horizontal" method="post" action="?">
+      <form class="form-horizontal" id="create_guest" method="post" action="<?=site_url('api/create')?>">
         <div class="control-group">
           <label class="control-label">First name: </label>
           <div class="controls">
-            <input type="text" name="firstname" class="input-xlarge"/>
+            <input type="text" name="firstname" class="input-xlarge" size="64"/>
           </div>
         </div>
 
         <div class="control-group">
           <label class="control-label">Last name: </label>
           <div class="controls">
-            <input type="text" name="lastname" class="input-xlarge"/>
+            <input type="text" name="lastname" class="input-xlarge" size="64"/>
           </div>
         </div>
 
@@ -34,7 +41,7 @@
         <div class="control-group">
           <label class="control-label">Email: </label>
           <div class="controls">
-            <input type="text" name="email" class="input-xlarge"/>
+            <input type="text" name="email" class="input-xlarge" size="64"/>
           </div>
         </div>
 
@@ -47,7 +54,7 @@
 
         <div class="control-group">
           <div class="controls">
-            <input type="submit" value="Add" class="btn btn-primary"/>
+            <input type="submit" id="send" value="Add" class="btn btn-primary"/>
           </div>
         </div>
       </form> 
