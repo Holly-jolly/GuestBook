@@ -1,12 +1,15 @@
+<?php
+  $this->load->helper('url');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Guestbook</title>
-  <link ref="stylesheet", href="public/css/bootstrap.min.css"/>
-  <link ref="stylesheet", href="public/css/bootstrap-responsive.min.css"/>
-  <link ref="stylesheet", href="public/css/style.css"/>
-  <script src="public/javascript/jquery-1.12.0.min.js"></script>
-  <script src="public/javascript/bootstrap.min.js"></script>
+  <link ref="stylesheet" type="text/css" href="<?php echo base_url('/public/stylesheets/bootstrap.min.css');?>"/>
+  <link ref="stylesheet" type="text/css" href="<?php echo base_url('/public/stylesheets/bootstrap-responsive.min.css');?>"/>
+  <link ref="stylesheet" type="text/css" href="<?php echo base_url('/public/stylesheets/style.css');?>"/>
+  <script src="/guestbook/public/javascript/jquery-1.12.0.min.js"></script>
+  <script src="/guestbook/public/javascript/bootstrap.min.js"></script>
 </head>
 <body>
   <h1> Guestbook </h1>
@@ -47,10 +50,31 @@
             <input type="submit" value="Add" class="btn btn-primary"/>
           </div>
         </div>
-      </form>
+      </form> 
 
-
-
+ 
+      <div class="table-responsive" >
+        <table class="table table-hover" id="guestlist">
+          <tbody>
+            <tr>
+              <th class="small-column"> User ID </th>
+              <th> First Name </th>
+              <th> Last Name </th>
+              <th> Email </th>
+              <th> Comment </th>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td> 1 </td>
+              <td> Holly </td>
+              <td> Liu </td>
+              <td> holly_liu@hotmail.com </td>
+              <td></td>
+            </tr>
+          </tbody> 
+        </table>
+      </div>
 
   <footer> &copy; Holly Liu - 2016</footer>
 </body>
