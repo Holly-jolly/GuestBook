@@ -7,6 +7,7 @@ class Api extends CI_Controller {
   public function __construct()
   {
     parent::__construct();
+    $this->load->model("api_model");
 
   }
 
@@ -34,7 +35,7 @@ class Api extends CI_Controller {
       'comment'=>$this->input->post('comment')
     ]);
 
-    if($result){
+    if ($result){
       $this->output->set_output(json_encode(["result" => 1]));
       return false;
     }

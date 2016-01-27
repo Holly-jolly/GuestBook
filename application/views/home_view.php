@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <title>Guestbook</title>
-  <link ref="stylesheet" type="text/css" href="<?php echo base_url('/public/stylesheets/bootstrap.min.css');?>"/>
-  <link ref="stylesheet" type="text/css" href="<?php echo base_url('/public/stylesheets/bootstrap-responsive.min.css');?>"/>
-  <link ref="stylesheet" type="text/css" href="<?php echo base_url('/public/stylesheets/style.css');?>"/>
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>public/stylesheets/bootstrap.min.css" media="screen"/>
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('/public/stylesheets/bootstrap-responsive.min.css');?>"/>
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('/public/stylesheets/style.css');?>"/>
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script type="text/javascript" src="<?php echo base_url();?>public/javascript/bootstrap.min.js"></script>
   <script type="text/javascript" src="<?php echo base_url();?>public/javascript/api/result.js"></script>
@@ -69,6 +69,7 @@
               <th> Last Name </th>
               <th> Email </th>
               <th> Comment </th>
+              <th> Edit/Delete </th>
             </tr>
           </tbody>
           <tbody>
@@ -77,7 +78,8 @@
               <td> Holly </td>
               <td> Liu </td>
               <td> holly_liu@hotmail.com </td>
-              <td></td>
+              <td> first guest </td>
+              <td><button>delete button </button></td>
             </tr>
           </tbody> 
         </table>

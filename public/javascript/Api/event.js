@@ -17,9 +17,8 @@ var Event = function(){
       var postData = $(this).serialize();
 
       $.post(url, postData, function(response){
-        if(response.result==1){ 
-         
-           Result.success();
+        if(response.result == 1){ 
+          
         }else{
           Result.failure();
         }

@@ -6,9 +6,11 @@ class Home extends CI_Controller {
   public function index()
   {
     $this->load->view('home_view');
+   
   }
+  
 
-  // public function test ()
+ // public function test ()
   // {
   //   //show everything from guest table
   //   $q=$this->db->get('guest');
