@@ -1,22 +1,23 @@
 <?php
 class Home_model extends CI_Model 
 {
-  public function show()
+  public function showGuest()
+  {
+    $query=$this->db->get('guest');
+    return $query;
+  }
+
+  public function insertGuest()
   {
 
   }
 
-  public function insert()
+  public function updateGuest()
   {
 
   }
 
-  public function update()
-  {
-
-  }
-
-  public function delete()
+  public function deleteGuest()
   {
 
   }

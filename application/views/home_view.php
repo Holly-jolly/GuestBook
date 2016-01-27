@@ -29,7 +29,18 @@
         data: {firstname: first_name, lastname: last_name,
           email: e_mail, comment:comment},
         success: function(res) {
-          console.log("success");
+          // $.ajax({
+          //   type:"get"
+          //   url: 
+          // })
+
+
+          //adding information to the table
+          // $('#guestlist > tbody:last-child').text(
+          //   '<tr><td>'+ res.firstname +'</td>'+ 
+          //   '<td>'+ res.lastname + '</td>' +
+          //   '<td>'+ res.email + '</td>'+
+          //   '<td>'+ res.comment + '</td>');
           } 
         });
       });
@@ -83,8 +94,7 @@
         <table class="table table-hover" id="guestlist">
           <tbody>
             <tr>
-              <th class="small-column"> User ID </th>
-              <th> First Name </th>
+              <th class="small-column"> First Name </th>
               <th> Last Name </th>
               <th> Email </th>
               <th> Comment </th>
@@ -93,7 +103,6 @@
           </tbody>
           <tbody>
             <tr>
-              <td> 1 </td>
               <td id = "cellOne"> Holly </td>
               <td id= "cellTwo"> Liu </td>
               <td id= "cellThree"> holly_liu@hotmail.com </td>
@@ -101,7 +110,16 @@
               <td><button>delete button </button></td>
             </tr>
           </tbody>
-          
+            <?php foreach($guests ->result() as $row) { ?>
+            <tr>
+              <td><?php echo $row->id;?></td>
+              <td><?php echo $row->firstname;?></td>
+              <td><?php echo $row->lastname;?></td>
+              <td><?php echo $row->email;?></td>
+              <td><?php echo $row->comment?></td>
+              <td><button>delete button </button></td>
+            </tr>
+            <?php } ?>
         </table>
       </div>
 
