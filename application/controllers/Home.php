@@ -64,5 +64,16 @@ class Home extends CI_Controller {
      ]));  
   }
 
+//----------------------------------------------------------------------------------------------------------------------------------
+  //delete guest data from db
+  public function delete_data($id)
+  {
+    $this->home_model->deleteGuest($id);
+    echo "<script>
+    window.location.href='http://localhost:8888/guestbook/home';
+    alert('Confirm to delete this guest');
+    </script>";
+    redirect("http://localhost:8888/guestbook/home");
+  }
 
 }

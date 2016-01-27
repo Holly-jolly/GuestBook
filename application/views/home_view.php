@@ -29,7 +29,12 @@
         data: {firstname: first_name, lastname: last_name,
           email: e_mail, comment:comment},
         success: function(res) {
-          alert("guest information has been successfully added")
+          if(res ==1){
+            alert("guest information has been successfully added");
+          }
+          else {
+            alert("please fill in all the requirement");
+          }
           // $.ajax({
           //   type:"get"
           //   url: 
@@ -110,7 +115,7 @@
               <td><?php echo $row->lastname;?></td>
               <td><?php echo $row->email;?></td>
               <td><?php echo $row->comment?></td>
-              <td><button>delete button </button></td>
+              <td><button><a href="http://localhost:8888/guestbook/home/delete_data/<?php echo $row->id; ?>">Delete</a> </button></td>
             </tr>
             <?php } ?>
         </table>
