@@ -29,6 +29,7 @@
         data: {firstname: first_name, lastname: last_name,
           email: e_mail, comment:comment},
         success: function(res) {
+          alert("guest information has been successfully added")
           // $.ajax({
           //   type:"get"
           //   url: 
@@ -94,20 +95,12 @@
         <table class="table table-hover" id="guestlist">
           <tbody>
             <tr>
-              <th class="small-column"> First Name </th>
+              <th class="small-column"> User ID </th>
+              <th> First Name </th>
               <th> Last Name </th>
               <th> Email </th>
               <th> Comment </th>
               <th> Edit/Delete </th>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <td id = "cellOne"> Holly </td>
-              <td id= "cellTwo"> Liu </td>
-              <td id= "cellThree"> holly_liu@hotmail.com </td>
-              <td id="cellFour"> first guest </td>
-              <td><button>delete button </button></td>
             </tr>
           </tbody>
             <?php foreach($guests ->result() as $row) { ?>
