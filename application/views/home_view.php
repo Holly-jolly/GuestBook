@@ -8,21 +8,50 @@
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script type="text/javascript" src="<?php echo base_url();?>public/javascript/bootstrap.min.js"></script>
   <script type="text/javascript" src="<?php echo base_url();?>public/javascript/api/result.js"></script>
-  <script type="text/javascript" src="<?php echo base_url();?>public/javascript/api/event.js"></script>
+  <!-- <script type="text/javascript" src="<?php echo base_url();?>public/javascript/api/event.js"></script>-->
   <script type="text/javascript" src="<?php echo base_url();?>public/javascript/api/template.js"></script>
   <script type="text/javascript" src="<?php echo base_url();?>public/javascript/api/guestboard.js"></script>
   <script> 
   //Initiate the Guestboard Application
   $(function(){
     var guestboard = new Guestboard();
+    //ajax call//
+    $("form").submit(function(event){
+      event.preventDefault();
+      var first_name= this.firstname.value;
+      var last_name=this.lastname.value;
+      var e_mail=this.email.value;
+      var comment=this.comment.value;
+      console.log("firstname", first_name, "last_name", last_name, e_mail, comment)
+      
+      $.ajax({
+        type:"post",
+        url: "<?php echo base_url();?>" + "home/create_data",
+        dataType: 'json',
+        data: {firstname: first_name,lastname:last_name,
+        email:e_mail, comment:comment },
+        success: function(res) {
+          if (res==1){
+            console.log("success");
+          }
+          else{
+            
+          }
+        }
+
+      });
+      return false;
+    });
   });
+
+
   </script>
 </head>
 <body>
   <h1> Guestbook </h1>
     <div>Company Name: H for Hope Independent Consultant </div>
       <div> Add a new guest: </div>
-      <form class="form-horizontal" id="create_guest" method="post" action="<?=site_url('api/create')?>">
+      <form class="form-horizontal" id="create_guest" method="post" action="<?=site_url('home/create_data')?>">
         <div class="control-group">
           <label class="control-label">First name: </label>
           <div class="controls">
