@@ -21,7 +21,10 @@ class Home extends CI_Controller {
       $this->output->set_output(json_encode([
         "result" => 0,
         "error" => $this->form_validation->error_array()
-      ]));
+      ])
+
+      
+    );
       return false;
     };
     
@@ -31,24 +34,16 @@ class Home extends CI_Controller {
       'email'=>$this->input->post('email'),
       'comment'=>$this->input->post('comment')
     ]);
+    
 
     if ($result){
-      $this->output->set_output(json_encode(["result" => 1]));
+      $this->output->set_output(json_encode(["result" => 1
+        ]));
       return false;
     }
      $this->output->set_output(json_encode([
       "result" => 0,
       "error" => "Failed to insert data"
-     ]));
-    
+     ]));  
   }
-
-//-----------------------------------------------------------------------------------------------
- // public function test ()
-  // {
-  //   //show everything from guest table
-  //   $q=$this->db->get('guest');
-  //   print_r($q->result());
-    
-  // }
 }

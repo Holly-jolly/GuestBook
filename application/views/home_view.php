@@ -8,7 +8,6 @@
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script type="text/javascript" src="<?php echo base_url();?>public/javascript/bootstrap.min.js"></script>
   <script type="text/javascript" src="<?php echo base_url();?>public/javascript/api/result.js"></script>
-  <!-- <script type="text/javascript" src="<?php echo base_url();?>public/javascript/api/event.js"></script>-->
   <script type="text/javascript" src="<?php echo base_url();?>public/javascript/api/template.js"></script>
   <script type="text/javascript" src="<?php echo base_url();?>public/javascript/api/guestboard.js"></script>
   <script> 
@@ -22,29 +21,20 @@
       var last_name=this.lastname.value;
       var e_mail=this.email.value;
       var comment=this.comment.value;
-      console.log("firstname", first_name, "last_name", last_name, e_mail, comment)
-      
+  
       $.ajax({
         type:"post",
         url: "<?php echo base_url();?>" + "home/create_data",
         dataType: 'json',
-        data: {firstname: first_name,lastname:last_name,
-        email:e_mail, comment:comment },
+        data: {firstname: first_name, lastname: last_name,
+          email: e_mail, comment:comment},
         success: function(res) {
-          if (res==1){
-            console.log("success");
-          }
-          else{
-            
-          }
-        }
-
+          console.log("success");
+          } 
+        });
       });
       return false;
     });
-  });
-
-
   </script>
 </head>
 <body>
@@ -104,13 +94,14 @@
           <tbody>
             <tr>
               <td> 1 </td>
-              <td> Holly </td>
-              <td> Liu </td>
-              <td> holly_liu@hotmail.com </td>
-              <td> first guest </td>
+              <td id = "cellOne"> Holly </td>
+              <td id= "cellTwo"> Liu </td>
+              <td id= "cellThree"> holly_liu@hotmail.com </td>
+              <td id="cellFour"> first guest </td>
               <td><button>delete button </button></td>
             </tr>
-          </tbody> 
+          </tbody>
+          
         </table>
       </div>
 
