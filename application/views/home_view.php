@@ -29,11 +29,24 @@
         data: {firstname: first_name, lastname: last_name,
           email: e_mail, comment:comment},
         success: function(res) {
-          if(res ==1){
-            alert("guest information has been successfully added");
+
+          if(res.result == 1){
+            $("#success-msg").html("<div class= alert alert-success fade in>" 
+              + "<a href= '#'' class= 'close' data-dismiss= 'alert' aria-label='close'>"
+              + "&times;</a>" +"Your guest information has been successfully saved!"+ 
+
+              "</div>");
+          
           }
           else {
-            alert("please fill in all the requirement");
+            $("#error-msg").html("<div class='alert alert-danger text-center fade in'>"
+              + "<a href= '#'' class= 'close' data-dismiss= 'alert' aria-label='close'>"
+              + "&times;</a>"+"Please fill in all the required fields!" +
+
+              "</div>");
+
+           
+            
           }
           // $.ajax({
           //   type:"get"
@@ -94,8 +107,9 @@
           </div>
         </div>
       </form> 
-
- 
+      <div id="success-msg"></div>
+      <div id="error-msg"></div>
+       
       <div class="table-responsive" >
         <table class="table table-hover" id="guestlist">
           <tbody>
