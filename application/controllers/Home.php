@@ -73,6 +73,7 @@ class Home extends CI_Controller {
     window.location.href='http://localhost:8888/guestbook/home';
     alert('Confirm to delete this guest');
     </script>";
+
     redirect("http://localhost:8888/guestbook/home");
   }
 

@@ -1,3 +1,4 @@
-Guestbook
-Stack: PHP, Codeignitor, Bootstrap, MySQL, Ajax
-A guestbook allows user to manage their guests information
+Guestbook (Work In Progress)
+Stack: PHP, Codeignitor, Bootstrap, MySQL, Ajax.
+
+A guestbook allows users to manage their guests information.
