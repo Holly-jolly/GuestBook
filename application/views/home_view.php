@@ -29,7 +29,7 @@
         data: {firstname: first_name, lastname: last_name,
           email: e_mail, comment:comment },
         success:function(res){
-          if(res[0]['result'] == 1){
+          if(res.result == 1){
             $("#success-msg").html("<div class= alert alert-success fade in>" 
               + "<a href= '#'' class= 'close' data-dismiss= 'alert' aria-label='close'>"
               + "&times;</a>" +"Your guest information has been successfully saved!"+ 
