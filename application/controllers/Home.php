@@ -77,4 +77,43 @@ class Home extends CI_Controller {
     redirect("http://localhost:8888/guestbook/home");
   }
 
+
+
+//---------------------------------------------------------------------------------------------------
+// Update guest data from db
+  //First step:  Retrieve guest info from the database
+  public function edit_data($id)
+  { 
+    $data['guest_info']=$this->home_model->get_Guest_Update($id);
+    $this->load->view('entry_view', $data);
+
+  }
+
+  public function update_data(){
+  //Set form validations
+    $this->load->library('form_validation');
+    $this->form_validation->set_rules('firstname',"firstname","required");
+    $this->form_validation->set_rules("lastname","lastname","required");
+    $this->form_validation->set_rules("email","email","required|valid_email"); 
+    $id= $this->input->post('userID');
+   
+    if($this->form_validation->run()==false)
+    {  
+      $this->edit_data($id);
+      
+
+    }else
+    {
+      $each_guest=array(
+        'firstname' => $this->input->post('firstname'),
+        'lastname'=>$this->input->post('lastname'),
+        'email'=>$this->input->post('email'),
+        'comment'=>$this->input->post('comment')
+      );
+
+      $this->home_model->updateGuest($each_guest, $id);
+      redirect("/home");
+    } 
+  }
 }
+
