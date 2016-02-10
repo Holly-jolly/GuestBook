@@ -129,7 +129,10 @@
               <td><?php echo $row->lastname;?></td>
               <td><?php echo $row->email;?></td>
               <td><?php echo $row->comment?></td>
-              <td><button><a href="http://localhost:8888/guestbook/home/delete_data/<?php echo $row->id; ?>">Delete</a> </button></td>
+              <td>
+              <button><a href="http://localhost:8888/guestbook/home/edit_data/<?php echo $row->id; ?>">Edit</a></button>
+              <button><a href="http://localhost:8888/guestbook/home/delete_data/<?php echo $row->id; ?>">Delete</a> </button>
+              </td>
             </tr>
             <?php } ?>
         </table>
