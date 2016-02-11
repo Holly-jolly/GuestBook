@@ -26,7 +26,7 @@ class Home extends CI_Controller {
     $this->load->library('form_validation');
     $this->form_validation->set_rules('firstname',"firstname","required");
     $this->form_validation->set_rules("lastname","lastname","required");
-    $this->form_validation->set_rules("email","email","required|valid_email|is_unique"); 
+    $this->form_validation->set_rules("email","email","required|valid_email"); 
 
     if($this->form_validation->run()==false)
     {
